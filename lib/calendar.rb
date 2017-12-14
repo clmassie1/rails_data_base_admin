@@ -9,7 +9,7 @@ require 'fileutils'
 OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
 APPLICATION_NAME = 'Google Calendar API Ruby Quickstart'
 CLIENT_SECRETS_PATH = 'client_secret.json'
-CREDENTIALS_PATH = File.join(Dir.home, '.credentials',
+CREDENTIALS_PATH = File.join('.credentials',
                              "calendar-ruby-quickstart.yaml")
 SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR_READONLY
 
