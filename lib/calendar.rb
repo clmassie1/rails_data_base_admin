@@ -21,7 +21,7 @@ SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR_READONLY
 # @return [Google::Auth::UserRefreshCredentials] OAuth2 credentials
 
 
-class Calendar
+module Calendar
 
 def self.authorize
   FileUtils.mkdir_p(File.dirname(CREDENTIALS_PATH))
