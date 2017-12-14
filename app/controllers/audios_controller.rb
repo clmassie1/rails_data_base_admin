@@ -3,9 +3,21 @@ class AudiosController < ApplicationController
 
   # GET /audios
   # GET /audios.json
-  def index
-    @audios = Audio.all
-  end
+  
+    def index 
+      @audios = Audio.all
+      @audios_data = []
+      @audios.each do |audio|
+        new_field = {"new_field" => audio.audio_file.url}
+        audios = JSON::parse(audio.to_json).merge(new_field)
+        @audios_data << audio
+      end
+    
+      respond_to do |format|
+       format.html
+       format.json { render :json => @audios_data} 
+      end
+    end
 
   # GET /audios/1
   # GET /audios/1.json
@@ -71,4 +83,4 @@ class AudiosController < ApplicationController
     def audio_params
       params.require(:audio).permit(:title, :description, :audio_file)
     end
-end
+  end 
