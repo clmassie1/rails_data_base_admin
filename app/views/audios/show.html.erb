@@ -15,7 +15,7 @@
 
 
 <audio controls>
-  <source src="<%= @audio.audio_file.url %>" type="audio/mpeg">
+  <source src="<%= @audio.description %>" type="audio/mpeg">
 </audio>
 <br>
 <%= link_to 'Edit', edit_audio_path(@audio) %> |
